@@ -41,12 +41,6 @@ function App() {
                className="bg-purple-500 hover:bg-purple-600 text-white px-8 py-3 rounded-full text-lg font-semibold transition-colors flex items-center gap-2">
               Try Now <ArrowRight className="w-5 h-5" />
             </a>
-            <a href="https://huggingface.co/spaces/lllyasviel/LuminaBrush" 
-               target="_blank"
-               rel="noopener noreferrer"
-               className="bg-gray-700 hover:bg-gray-600 text-white px-8 py-3 rounded-full text-lg font-semibold transition-colors">
-              View on Hugging Face
-            </a>
           </div>
         </div>
       </header>
@@ -168,7 +162,7 @@ function App() {
             <DemoCard
               icon={<ImageIcon />}
               title="Example Gallery"
-              description="See what's possible with our online lighting effects."
+              description="See what's possible with LuminaBrush online lighting effects."
               isActive={selectedDemo === 'gallery'}
               onClick={() => setSelectedDemo('gallery')}
             />
@@ -212,27 +206,27 @@ function App() {
                   <GalleryItem
                     title="Portrait Enhancement"
                     description="Add dramatic lighting to portraits instantly online."
-                    beforeImage="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80"
-                    afterImage="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80"
+                    beforeImage="/images/portrait-before.png"
+                    afterImage="/images/portrait-after.png"
                   />
                   <GalleryItem
                     title="Landscape Lighting"
                     description="Transform landscapes with atmospheric lighting effects."
-                    beforeImage="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
-                    afterImage="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80"
+                    beforeImage="/images/landscape-before.png"
+                    afterImage="/images/landscape-after.png"
                   />
-                  <GalleryItem
+                  {/* <GalleryItem
                     title="Still Life Enhancement"
                     description="Perfect lighting for still life compositions in seconds."
-                    beforeImage="https://images.unsplash.com/photo-1515594619429-0f51b7fac8c2?auto=format&fit=crop&w=800&q=80"
-                    afterImage="https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?auto=format&fit=crop&w=800&q=80"
+                    beforeImage="/images/still-life-before.jpg"
+                    afterImage="/images/still-life-after.jpg"
                   />
                   <GalleryItem
                     title="Architectural Lighting"
                     description="Enhance architectural photos with professional lighting."
-                    beforeImage="https://images.unsplash.com/photo-1464146072230-91cabc968266?auto=format&fit=crop&w=800&q=80"
-                    afterImage="https://images.unsplash.com/photo-1481277542470-605612bd2d61?auto=format&fit=crop&w=800&q=80"
-                  />
+                    beforeImage="/images/architecture-before.jpg"
+                    afterImage="/images/architecture-after.jpg"
+                  /> */}
                 </div>
               </div>
             )}
@@ -244,19 +238,16 @@ function App() {
                     number="01"
                     title="Upload Your Image"
                     description="Simply drag and drop or select your image to begin. Supported formats include JPG, PNG, and more."
-                    image="https://images.unsplash.com/photo-1682687220742-aba19b51f11d?auto=format&fit=crop&w=800&q=80"
                   />
                   <ProcessStep
                     number="02"
                     title="Cloud Processing"
                     description="Our cloud servers process your image using advanced AI models for optimal results."
-                    image="https://images.unsplash.com/photo-1682687220742-aba19b51f11d?auto=format&fit=crop&w=800&q=80"
                   />
                   <ProcessStep
                     number="03"
                     title="Real-time Effects"
                     description="Add and adjust lighting effects in real-time with instant preview."
-                    image="https://images.unsplash.com/photo-1682687220742-aba19b51f11d?auto=format&fit=crop&w=800&q=80"
                   />
                   <div className="bg-gray-800 rounded-lg p-6">
                     <h4 className="text-xl font-semibold mb-4">Online Features</h4>
@@ -442,11 +433,11 @@ function GalleryItem({ title, description, beforeImage, afterImage }: {
       </div>
       <div className="grid grid-cols-2 gap-4">
         <div>
-          <img src={beforeImage} alt="Before" className="rounded-lg w-full h-48 object-cover" />
+          <img src={beforeImage} alt="Before" className="rounded-lg w-full h-96 object-cover" />
           <p className="text-center mt-2 text-gray-400">Before</p>
         </div>
         <div>
-          <img src={afterImage} alt="After" className="rounded-lg w-full h-48 object-cover" />
+          <img src={afterImage} alt="After" className="rounded-lg w-full h-96 object-cover" />
           <p className="text-center mt-2 text-gray-400">After</p>
         </div>
       </div>
