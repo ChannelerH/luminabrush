@@ -48,13 +48,6 @@ function App() {
       {/* Features Section */}
       <section id="features" className="py-20 bg-gray-800">
         <div className="container mx-auto px-4">
-          <nav aria-label="Breadcrumb" className="text-sm mb-4">
-            <ol className="flex">
-              <li><a href="/" className="text-purple-400 hover:underline">Home</a></li>
-              <li><span className="mx-2">/</span></li>
-              <li><a href="#features" className="text-purple-400 hover:underline">Features</a></li>
-            </ol>
-          </nav>
           <h2 className="text-4xl font-bold text-center mb-16">Online Features</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <FeatureCard
