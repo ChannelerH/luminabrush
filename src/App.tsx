@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Paintbrush2, Sun, Layers, Image, Palette, Wand2, Lightbulb, Github, SplitSquareVertical, Workflow, Shapes, Brush, Play, Image as ImageIcon, ArrowRight, Upload, Sliders, Download, RefreshCw, Sparkles } from 'lucide-react';
+import { Paintbrush2, Sun, Layers, Image, Palette, Wand2, Lightbulb, Github, SplitSquareVertical, Workflow, Shapes, Brush, Play, Image as ImageIcon, ArrowRight, Upload, Sliders, Download, RefreshCw, Sparkles, Twitter } from 'lucide-react';
 
 function App() {
   const [selectedDemo, setSelectedDemo] = useState('interactive');
@@ -48,6 +48,13 @@ function App() {
       {/* Features Section */}
       <section id="features" className="py-20 bg-gray-800">
         <div className="container mx-auto px-4">
+          <nav aria-label="Breadcrumb" className="text-sm mb-4">
+            <ol className="flex">
+              <li><a href="/" className="text-purple-400 hover:underline">Home</a></li>
+              <li><span className="mx-2">/</span></li>
+              <li><a href="#features" className="text-purple-400 hover:underline">Features</a></li>
+            </ol>
+          </nav>
           <h2 className="text-4xl font-bold text-center mb-16">Online Features</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <FeatureCard
@@ -323,6 +330,14 @@ function App() {
       <footer className="bg-gray-900 py-8">
         <div className="container mx-auto px-4 text-center text-gray-400">
           <p>© 2024 LuminaBrush Online. All rights reserved.</p>
+          <div className="flex gap-4 mt-8">
+            <a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent('https://luminabrush.site/')}&text=${encodeURIComponent('Check out LuminaBrush - AI-Powered Lighting Effects!')}`} 
+               target="_blank" 
+               rel="noopener noreferrer"
+               className="p-2 bg-gray-700 rounded-full hover:bg-gray-600 transition-colors">
+              <Twitter className="w-5 h-5" />
+            </a>
+          </div>
         </div>
       </footer>
     </div>
@@ -443,11 +458,20 @@ function GalleryItem({ title, description, beforeImage, afterImage }: {
             alt="Image before applying LuminaBrush lighting effects" 
             className="rounded-lg w-full h-96 object-cover" 
             loading="lazy"
+            width="600"
+            height="400"
           />
           <p className="text-center mt-2 text-gray-400">Before</p>
         </div>
         <div>
-          <img src={afterImage} alt="Image After applying LuminaBrush lighting effects" className="rounded-lg w-full h-96 object-cover" />
+          <img 
+            src={afterImage} 
+            alt="Image After applying LuminaBrush lighting effects" 
+            className="rounded-lg w-full h-96 object-cover"
+            loading="lazy"
+            width="600"
+            height="400"
+          />
           <p className="text-center mt-2 text-gray-400">After</p>
         </div>
       </div>

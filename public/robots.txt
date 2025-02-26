@@ -1,3 +1,8 @@
 User-agent: *
 Allow: /
+
 Sitemap: https://luminabrush.site/sitemap.xml
+
+# 禁止爬取某些资源
+Disallow: /assets/
+Disallow: /*.json$
