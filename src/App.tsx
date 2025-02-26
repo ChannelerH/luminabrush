@@ -362,7 +362,12 @@ function ProcessStep({ number, title, description, image }: { number: string; ti
             <p className="text-gray-300">{description}</p>
           </div>
           <div className="w-2/3">
-            <img src={image} alt={title} className="rounded-lg w-full h-48 object-cover" />
+            <img 
+              src={image} 
+              alt="Image before applying LuminaBrush lighting effects" 
+              className="rounded-lg w-full h-96 object-cover" 
+              loading="lazy"
+            />
           </div>
         </>
       ) : (
@@ -433,11 +438,16 @@ function GalleryItem({ title, description, beforeImage, afterImage }: {
       </div>
       <div className="grid grid-cols-2 gap-4">
         <div>
-          <img src={beforeImage} alt="Before" className="rounded-lg w-full h-96 object-cover" />
+          <img 
+            src={beforeImage} 
+            alt="Image before applying LuminaBrush lighting effects" 
+            className="rounded-lg w-full h-96 object-cover" 
+            loading="lazy"
+          />
           <p className="text-center mt-2 text-gray-400">Before</p>
         </div>
         <div>
-          <img src={afterImage} alt="After" className="rounded-lg w-full h-96 object-cover" />
+          <img src={afterImage} alt="Image After applying LuminaBrush lighting effects" className="rounded-lg w-full h-96 object-cover" />
           <p className="text-center mt-2 text-gray-400">After</p>
         </div>
       </div>
