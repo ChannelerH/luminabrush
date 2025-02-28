@@ -1,8 +1,14 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://luminabrush.site/sitemap.xml
-
 # 禁止爬取某些资源
 Disallow: /assets/
 Disallow: /*.json$
+
+# 允许所有图片被索引
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.webp$
+
+Sitemap: https://luminabrush.site/sitemap.xml
