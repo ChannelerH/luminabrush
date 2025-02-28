@@ -18,6 +18,8 @@ function App() {
             <a href="#technology" className="hover:text-purple-400 transition-colors">Technology</a>
             <a href="#demo" className="hover:text-purple-400 transition-colors">Try Now</a>
             <a href="#guide" className="hover:text-purple-400 transition-colors">Guide</a>
+            <a href="#testimonials" className="hover:text-purple-400 transition-colors">Reviews</a>
+            <a href="#faq" className="hover:text-purple-400 transition-colors">FAQ</a>
             <a href="https://github.com/lllyasviel/LuminaBrush" 
                className="flex items-center gap-2 hover:text-purple-400 transition-colors"
                target="_blank" 
@@ -319,6 +321,62 @@ function App() {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section id="testimonials" className="py-20 bg-gray-800">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-16">What Users Say</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <TestimonialCard
+              name="Sarah Chen"
+              role="Digital Artist"
+              quote="LuminaBrush has completely transformed my workflow. The lighting effects are stunning and save me hours of manual editing. Being able to use it directly in my browser is incredibly convenient!"
+              rating={5}
+            />
+            <TestimonialCard
+              name="Michael Rodriguez"
+              role="Photographer"
+              quote="As a professional photographer, lighting is everything. LuminaBrush gives me the ability to enhance my photos with natural-looking lighting that would be impossible to achieve during the shoot. Game changer!"
+              rating={5}
+            />
+            <TestimonialCard
+              name="Emily Johnson"
+              role="Graphic Designer"
+              quote="I was skeptical about an online tool having such powerful capabilities, but LuminaBrush exceeded all my expectations. The interface is intuitive and the results are professional quality."
+              rating={4}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section id="faq" className="py-20 bg-gray-900">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-16">Frequently Asked Questions</h2>
+          <div className="max-w-3xl mx-auto space-y-8">
+            <FaqItem
+              question="Is LuminaBrush free to use?"
+              answer="Yes, LuminaBrush Online is completely free to use in your browser. There are no hidden fees or subscription requirements."
+            />
+            <FaqItem
+              question="Do I need to download any software?"
+              answer="No, LuminaBrush works entirely in your web browser. There's no need to download or install any software on your device."
+            />
+            <FaqItem
+              question="What types of images work best with LuminaBrush?"
+              answer="LuminaBrush works well with a wide variety of images, including portraits, landscapes, still life, and architectural photos. Images with clear subjects and good initial contrast tend to produce the best results."
+            />
+            <FaqItem
+              question="How long does it take to process an image?"
+              answer="Processing time depends on the size and complexity of your image, but most images are processed within seconds thanks to cloud-based AI technology."
+            />
+            <FaqItem
+              question="Does LuminaBrush work on mobile devices?"
+              answer="Yes, LuminaBrush Online is fully responsive and works on smartphones and tablets with modern web browsers. The interface automatically adapts to your screen size."
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-gray-900 py-8">
         <div className="container mx-auto px-4 text-center text-gray-400">
@@ -467,6 +525,71 @@ function GalleryItem({ title, description, beforeImage, afterImage }: {
           />
           <p className="text-center mt-2 text-gray-400">After</p>
         </div>
+      </div>
+    </div>
+  );
+}
+
+function TestimonialCard({ name, role, quote, rating }: {
+  name: string;
+  role: string;
+  quote: string;
+  rating: number;
+}) {
+  return (
+    <div className="bg-gray-700 p-8 rounded-lg">
+      <div className="flex items-center gap-4 mb-6">
+        <div>
+          <h4 className="text-lg font-semibold">{name}</h4>
+          <p className="text-gray-400">{role}</p>
+        </div>
+      </div>
+      <p className="text-gray-300 mb-6">"{quote}"</p>
+      <div className="flex">
+        {Array.from({ length: 5 }).map((_, i) => (
+          <svg
+            key={i}
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill={i < rating ? "#a855f7" : "none"}
+            stroke={i < rating ? "none" : "currentColor"}
+            className="w-5 h-5"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+            />
+          </svg>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function FaqItem({ question, answer }: { question: string; answer: string }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <div className="border-b border-gray-700 pb-6">
+      <button
+        className="flex justify-between items-center w-full text-left"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        <h3 className="text-xl font-semibold">{question}</h3>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className={`w-6 h-6 transition-transform ${isOpen ? 'transform rotate-180' : ''}`}
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+      <div className={`mt-4 text-gray-300 ${isOpen ? 'block' : 'hidden'}`}>
+        <p>{answer}</p>
       </div>
     </div>
   );
