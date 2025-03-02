@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Paintbrush2, Sun, Layers, Image, Palette, Wand2, Lightbulb, Github, SplitSquareVertical, Workflow, Shapes, Brush, Play, Image as ImageIcon, ArrowRight, Upload, Sliders, Download, RefreshCw, Sparkles, Twitter } from 'lucide-react';
+import { Paintbrush2, Sun, Layers, Image, Palette, Wand2, Lightbulb, Github, SplitSquareVertical, Workflow, Shapes, Brush, Play, Image as ImageIcon, ArrowRight, Upload, Sliders, Download, RefreshCw, Sparkles, Twitter , Users, Star } from 'lucide-react';
 
 function App() {
   const [selectedDemo, setSelectedDemo] = useState('interactive');
@@ -35,13 +35,27 @@ function App() {
             Experience AI Lighting
             <span className="text-purple-400"> Online</span>
           </h1>
-          <p className="text-xl text-gray-300 max-w-2xl mb-8">
+          <p className="text-xl text-gray-300 max-w-2xl">
             Transform your artwork instantly with LuminaBrush Online. Our browser-based AI lighting tool lets you create stunning lighting effects with just a few clicks - no download required.
           </p>
+          <div className="flex items-center justify-center gap-8 mt-8 text-gray-300 mb-6">
+            <div className="flex items-center">
+              <Users className="w-5 h-5 mr-2 text-purple-400" />
+              <span>10,000+ Users</span>
+            </div>
+            <div className="flex items-center">
+              <Image className="w-5 h-5 mr-2 text-purple-400" />
+              <span>50,000+ Images Processed</span>
+            </div>
+            <div className="flex items-center">
+              <Star className="w-5 h-5 mr-2 text-purple-400" />
+              <span>4.8/5 Average Rating</span>
+            </div>
+          </div>
           <div className="flex gap-4">
             <a href="#demo" 
-               className="bg-purple-500 hover:bg-purple-600 text-white px-8 py-3 rounded-full text-lg font-semibold transition-colors flex items-center gap-2">
-              Try Now <ArrowRight className="w-5 h-5" />
+               className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-8 py-3 rounded-full text-lg font-semibold transition-all transform hover:scale-105 flex items-center gap-2 shadow-lg">
+              Try For Free <ArrowRight className="w-5 h-5 animate-pulse" />
             </a>
           </div>
         </div>
