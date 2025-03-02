@@ -11,4 +11,7 @@ Allow: /*.jpg$
 Allow: /*.jpeg$
 Allow: /*.webp$
 
+# 确保允许访问图标文件
+Allow: /*.ico$
+
 Sitemap: https://luminabrush.site/sitemap.xml
