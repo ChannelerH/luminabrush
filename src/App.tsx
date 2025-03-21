@@ -401,7 +401,10 @@ function App() {
               <a href="https://wan21.run/" target="_blank" rel="dofollow" className="text-gray-500 hover:text-gray-400 transition-colors text-xs">
                 wan21
               </a>
-              
+              <a href="https://picapix.org/" target="_blank" rel="dofollow" className="text-gray-500 hover:text-gray-400 transition-colors text-xs">
+                picapix
+              </a>
+
               <a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent('https://luminabrush.site/')}&text=${encodeURIComponent('Check out LuminaBrush - AI-Powered Lighting Effects!')}`} 
                  target="_blank" 
                  rel="noopener noreferrer"
